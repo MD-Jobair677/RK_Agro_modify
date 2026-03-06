@@ -1,0 +1,72 @@
+[2025-12-27 21:21:09] local.INFO: Detected N+1 Query  
+[2025-12-27 21:21:09] local.INFO: Model: App\Models\Cattle
+Relation: App\Models\CattleExpense
+Num-Called: 2
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Cattle.php:63
+#23 \app\Http\Controllers\Admin\BookingController.php:469
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \app\Http\Middleware\RedirectIfNotAdmin.php:22
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\LanguageMiddleware.php:22
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#44 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#45 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#46 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#47 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:119
+  
+[2025-12-27 21:23:10] local.INFO: Detected N+1 Query  
+[2025-12-27 21:23:10] local.INFO: Model: App\Models\Cattle
+Relation: App\Models\CattleExpense
+Num-Called: 2
+Call-Stack:
+#14 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:23
+#15 \vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php:52
+#17 \app\Models\Cattle.php:63
+#23 \app\Http\Controllers\Admin\BookingController.php:469
+#24 \vendor\laravel\framework\src\Illuminate\Routing\Controller.php:54
+#25 \vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php:43
+#26 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:259
+#27 \vendor\laravel\framework\src\Illuminate\Routing\Route.php:205
+#28 \vendor\laravel\framework\src\Illuminate\Routing\Router.php:806
+#29 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:144
+#30 \app\Http\Middleware\RedirectIfNotAdmin.php:22
+#31 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#32 \vendor\barryvdh\laravel-debugbar\src\Middleware\InjectDebugbar.php:66
+#33 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#34 \app\Http\Middleware\LanguageMiddleware.php:22
+#35 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#36 \vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php:50
+#37 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#38 \vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php:78
+#39 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#40 \vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php:49
+#41 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#42 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:121
+#43 \vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php:64
+#44 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#45 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php:37
+#46 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#47 \vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php:67
+#48 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:183
+#49 \vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php:119
+  
