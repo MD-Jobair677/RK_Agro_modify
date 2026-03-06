@@ -38,6 +38,10 @@
                         <span class="tf-icons las la-plus-circle me-1"></span>
                         @lang('Add New')
                     </a>
+                    <a href="{{ route('admin.booking.all.payments') }}" class="btn btn-sm btn-info">
+                        <span class="tf-icons las la-list me-1"></span>
+                        @lang('Show All Payments')
+                    </a>
                     <table class="table table-hover">
                         <thead>
                             <tr>

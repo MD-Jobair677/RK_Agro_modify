@@ -196,7 +196,7 @@ Route::middleware('admin')->group(function () {
         Route::get('estimate-cost-on-delivery', 'estimateCostAndWeightOnDelivery')->name('estimate.cost.on.delivery');
 
         Route::get('payments/list/{id}', 'paymentList')->name('payment.list');
-
+        Route::get('payments/all', 'allPayments')->name('all.payments');
 
         Route::get('add/payments/{id}', 'addPayment')->name('add.payment');
         Route::post('payments/store', 'storePayment')->name('store.payment');

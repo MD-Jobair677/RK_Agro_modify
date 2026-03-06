@@ -549,7 +549,6 @@ class BookingController extends Controller
             ->with('booking.cattle_bookings.cattle')
             ->orderBy('id', 'desc')
             ->paginate(getPaginate(30));
-        //   dd($bookingPayments);
         $is_printed = PaymentReceipt::where('booking_id', $booking->id)->first() ? 'yes' : 'no';
         $paymentBooking = CattleBooking::where('booking_id',  $booking->id)->with(['cattle:id,tag_number', 'bookingPayment'])->paginate(getPaginate(30));
         //  dd($paymentBooking);
@@ -557,6 +556,20 @@ class BookingController extends Controller
 
 
         return view('admin.booking_payment.index', compact('pageTitle', 'bookingPayments', 'booking', 'is_printed', 'paymentBooking'));
+    }
+
+    public function allPayments()
+    {
+        $pageTitle = 'All Payments';
+        $allPayments = BookingPayment::with('booking')
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $bookingPayments = $allPayments->groupBy(function($item) {
+            return $item->booking->booking_number ?? 'N/A';
+        });
+
+        return view('admin.booking_payment.allbookingpayment', compact('pageTitle', 'bookingPayments'));
     }
 
 
