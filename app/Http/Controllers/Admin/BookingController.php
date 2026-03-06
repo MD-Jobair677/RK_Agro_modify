@@ -569,7 +569,7 @@ class BookingController extends Controller
             return $item->booking->booking_number ?? 'N/A';
         });
 
-        return view('admin.booking_payment.allbookingpayment', compact('pageTitle', 'bookingPayments'));
+        return view('admin.booking_payment.allBookingPayment', compact('pageTitle', 'bookingPayments'));
     }
 
 
@@ -1089,7 +1089,7 @@ public function updatePayment(Request $request)
     function paymentSlip(Request $request, $id)
     {
 
-
+// dd($id);
         $request->validate([
             'booking_id' => 'required|exists:bookings,id',
             // 'cattle_display_name' => 'required',
