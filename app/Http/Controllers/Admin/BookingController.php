@@ -1121,10 +1121,10 @@ public function updatePayment(Request $request)
 
             $payment_receipt_price = 0;
 
-            if ($payment_price->payment === null) {
+            if ($payment_price->payment <= 0) {
 
                 $payment_receipt_price = $payment_price->advance_price;
-            } else if ($payment_price->advance_price === null) {
+            } else if ($payment_price->advance_price <=0) {
                 $payment_receipt_price = $payment_price->payment;
             }
             // dd($payment_receipt_price);
