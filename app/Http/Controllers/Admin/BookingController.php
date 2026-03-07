@@ -1101,10 +1101,6 @@ public function updatePayment(Request $request)
 
         DB::beginTransaction();
         try {
-            // Generate unique payment UID
-            $UniqueID = uniqueId(PaymentReceipt::class, 'REC-', 6);
-            //  dd($UniqueID);
-
             // Get booking payment data
             $receptPayment = BookingPayment::with(['booking.delivery_location', 'booking.customer'])
                 ->findOrFail($request->booking_id);
@@ -1128,6 +1124,14 @@ public function updatePayment(Request $request)
                 $payment_receipt_price = $payment_price->payment;
             }
             // dd($payment_receipt_price);
+
+            // Check if payment receipt already exists
+            $existingReceipt = PaymentReceipt::where('booking_id', $request->booking_id)
+                ->where('cattle_booking_id', $id)
+                ->first();
+
+            // Only generate new receipt number if it's a new payment
+            $UniqueID = $existingReceipt ? $existingReceipt->payment_uid : uniqueId(PaymentReceipt::class, 'REC-', 6);
 
             $paymentReceipt = PaymentReceipt::updateOrCreate(
 
