@@ -16,7 +16,7 @@
                                 <input name="payment_date" id="datepicker" type="text" data-range="false"
                                     data-language="en" class="datepicker-here form-control" data-position='bottom right'
                                     placeholder="@lang('Payment Date')" autocomplete="off"
-                                    value="{{ $BookingPayment->payment_date }}">
+                                    value="{{ $BookingPayment->bookingPayment && $BookingPayment->bookingPayment->payment_date ? \Carbon\Carbon::parse($BookingPayment->bookingPayment->payment_date)->format('d/m/Y') : '' }}">
                             </div>
                         </div>
                       

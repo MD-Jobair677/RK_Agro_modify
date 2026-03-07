@@ -197,6 +197,7 @@ Route::middleware('admin')->group(function () {
 
         Route::get('payments/list/{id}', 'paymentList')->name('payment.list');
         Route::get('payments/all', 'allPayments')->name('all.payments');
+        Route::get('payments/show/{id}', 'showPayments')->name('show.payments');
 
         Route::get('add/payments/{id}', 'addPayment')->name('add.payment');
         Route::post('payments/store', 'storePayment')->name('store.payment');

@@ -572,6 +572,19 @@ class BookingController extends Controller
         return view('admin.booking_payment.allBookingPayment', compact('pageTitle', 'bookingPayments'));
     }
 
+    public function showPayments($id)
+    {
+        $booking = Booking::findOrFail($id);
+        $pageTitle = 'Payments - ' . $booking->booking_number;
+
+        $bookingPayments = BookingPayment::where('cattle_booking_id', $id)
+            ->with('booking')
+            ->orderBy('id', 'desc')
+            ->get();
+
+        return view('admin.booking_payment.showPayments', compact('pageTitle', 'booking', 'bookingPayments'));
+    }
+
 
 
 
@@ -680,7 +693,7 @@ class BookingController extends Controller
         // dd($booking, $payment);
 
         $pageTitle = 'Edit Payment';
-        $BookingPayment = CattleBooking::findOrFail($payment);
+        $BookingPayment = CattleBooking::with('bookingPayment')->findOrFail($payment);
         // dd($BookingPayment);
 
         // $booking = Booking::findOrFail($booking);

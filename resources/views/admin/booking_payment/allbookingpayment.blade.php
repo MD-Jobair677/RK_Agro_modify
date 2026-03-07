@@ -42,7 +42,7 @@
                                 <th class="text-center">@lang('Cattle Name/number')</th>
                                 <th class="text-center">@lang('Payment Date')</th>
                                 <th class="text-center">@lang('Payment Amount')</th>
-                                <th class="text-center">@lang('Payment Method')</th>
+                                {{-- <th class="text-center">@lang('Payment Method')</th> --}}
                             </tr>
                         </thead>
 
@@ -87,13 +87,17 @@
                                             @endif
                                         </td>
 
-                                        <td class="text-center">
-                                            N/A
-                                        </td>
+                                        {{-- <td class="text-center">
+                                            @if ($item->booking && $item->booking->payment_method)
+                                                {{ ucfirst($item->booking->payment_method) }}
+                                            @else
+                                                N/A
+                                            @endif
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                                 <tr style="background-color: #e8f5e9; font-weight: bold;">
-                                    <td colspan="4" class="text-right">@lang('Group Total'):</td>
+                                    <td colspan="3" class="text-right">@lang('Group Total'):</td>
                                     <td class="text-center">
                                         {{ showAmount($payments->sum('price')) }}
                                     </td>

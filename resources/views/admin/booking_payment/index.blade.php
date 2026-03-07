@@ -38,6 +38,10 @@
                         <span class="tf-icons las la-plus-circle me-1"></span>
                         @lang('Add New')
                     </a>
+                    <a href="{{ route('admin.booking.show.payments', $booking->id) }}" class="btn btn-sm btn-primary">
+                        <span class="tf-icons las la-money-bill-wave me-1"></span>
+                        @lang('Payments')
+                    </a>
                     <a href="{{ route('admin.booking.all.payments') }}" class="btn btn-sm btn-info">
                         <span class="tf-icons las la-list me-1"></span>
                         @lang('Show All Payments')
@@ -50,6 +54,7 @@
                                 <th class="text-center">@lang('Payment Date')</th>
                                 <th class="text-center">@lang('Sale Price')</th>
                                 <th class="text-center">@lang('Payment')</th>
+                                <th class="text-center">@lang('Payment Method')</th>
                                 <th class="text-center">@lang('Action')</th>
                                 <th class="text-center">@lang('Is Print')</th>
                             </tr>
@@ -103,6 +108,13 @@
                                         @endif
                                     </td>
 
+                                    <td class="text-center">
+                                        @if ($item->payment_method)
+                                            {{ ucfirst($item->payment_method) }}
+                                        @else
+                                            N/A
+                                        @endif
+                                    </td>
 
                                     <td class="text-center">
                                         <!-- Edit Button -->
