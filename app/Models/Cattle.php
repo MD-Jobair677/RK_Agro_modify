@@ -53,6 +53,11 @@ class Cattle extends Model
         return $this->hasOne(Booking::class, 'cattle_id', 'id');
     }
 
+    public function cattle_bookings()
+    {
+        return $this->hasMany(CattleBooking::class, 'cattle_id', 'id');
+    }
+
     public function cattle_expenses()
     {
         return $this->hasMany(CattleExpense::class, 'cattle_id', 'id');

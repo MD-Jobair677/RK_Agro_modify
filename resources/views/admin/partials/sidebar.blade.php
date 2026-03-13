@@ -185,7 +185,7 @@
         @endif
 
         @if (Gate::forUser($admin)->check('has-permission', 'cattle list'))
-            <li class="menu-item {{ sideMenuActive('admin.cattle*', 3) }}">
+            <li class="menu-item {{ sideMenuActive(['admin.cattle*', 'admin.booking*'], 3) }}">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                     <i class="menu-icon tf-icons las la-credit-card text-info"></i>
                     <div class="text-truncate">@lang('Cattles')</div>
@@ -199,6 +199,11 @@
                     <li class="menu-item {{ sideMenuActive('admin.booking.index*', 1) }}">
                         <a href="{{ route('admin.booking.index') }}" class="menu-link">
                             <div class="text-truncate">@lang('Cattle bookings')</div>
+                        </a>
+                    </li>
+                    <li class="menu-item {{ sideMenuActive('admin.booking.report*', 1) }}">
+                        <a href="{{ route('admin.booking.report') }}" class="menu-link">
+                            <div class="text-truncate">@lang('Booking Report')</div>
                         </a>
                     </li>
                 </ul>

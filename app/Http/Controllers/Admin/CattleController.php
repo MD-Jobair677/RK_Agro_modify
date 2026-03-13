@@ -27,7 +27,7 @@ class CattleController extends Controller
     {
 
         $pageTitle = 'Cattle List';
-        $cattles = Cattle::with(['cattleCategory', 'primaryImage'])
+        $cattles = Cattle::with(['cattleCategory', 'primaryImage', 'cattle_bookings.booking'])
             ->searchable(['tag_number'])
             ->dateFilter()
             ->orderBy('id')

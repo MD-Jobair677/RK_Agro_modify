@@ -177,9 +177,11 @@ Route::middleware('admin')->group(function () {
     });
 
 
-    //Booking 
+    //Booking
     Route::controller('BookingController')->prefix('manage/booking')->name('booking.')->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('report', 'report')->name('report');
+        Route::get('report/export', 'exportBookingReport')->name('report.export');
         Route::get('/create', 'create')->name('create');
         Route::post('store', 'store')->name('store');
         Route::get('edit/{id}', 'edit')->name('edit');

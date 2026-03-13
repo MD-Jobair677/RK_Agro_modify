@@ -18,6 +18,7 @@
                                 <th class="text-center">@lang('Category Name')</th>
                                 <th class="text-center">@lang('Asking Price')</th>
                                 <th class="text-center">@lang('Weight')</th>
+                                <th class="text-center">@lang('Booking')</th>
                                 <th class="text-center">@lang('Status')</th>
                                 <th class="text-center">@lang('Actions')</th>
                             </tr>
@@ -37,6 +38,13 @@
                                     <td class="text-center">{{ $cattle->cattleCategory->name }}</td>
                                     <td class="text-center">{{ $cattle->asking_price }}</td>
                                     <td class="text-center">{{ $cattle->purchase_weight }}</td>
+                                    <td class="text-center">
+                                        @if($cattle->cattle_bookings->first())
+                                            {{ $cattle->cattle_bookings->first()->booking->booking_number }}
+                                        @else
+                                            <span class="text-muted">-</span>
+                                        @endif
+                                    </td>
                                     <td class="text-center">@php echo $cattle->statusBadge @endphp</td>
                                     @if($cattle->status == 1 || $cattle->status == 2)
                                     <td class="text-center">
