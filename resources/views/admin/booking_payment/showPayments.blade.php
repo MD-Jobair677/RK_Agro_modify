@@ -89,11 +89,10 @@
                         @if ($bookingPayments->count() > 0)
                             <tfoot style="background-color: #e8f5e9; font-weight: bold;">
                                 <tr>
-                                    <td colspan="2" class="text-right">@lang('Total Payment'):</td>
+                                    <td colspan="3" class="text-right">@lang('Total Payment'):</td>
                                     <td class="text-center">
                                         {{ showAmount($bookingPayments->sum('price')) }}
                                     </td>
-                                    <td></td>
                                 </tr>
                             </tfoot>
                         @endif
